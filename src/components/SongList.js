@@ -1,36 +1,36 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { selectSong } from '../actions';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createAction } from "../reducers/reducer.utils";
+import { connect } from "react-redux";
+import { selectSong } from "../reducers/songs.action";
 
-class SongList extends Component {
-  renderList() {
-    return this.props.songs.map(song => {
-      return (
-        <div className="item" key={song.title}>
-          <div className="right floated content">
-            <button
-              className="ui button primary"
-              onClick={() => this.props.selectSong(song)}
-            >
-              Select
-            </button>
+const SongList = ({ songs }) => {
+  const dispatch = useDispatch();
+
+  return (
+    <div className="ui divided list">
+      {songs.map((song) => {
+        return (
+          <div className="item" key={song.title}>
+            <div className="right floated content">
+              <button
+                className="ui button primary"
+                onClick={() => dispatch(selectSong(song))}
+              >
+                Select
+              </button>
+            </div>
+            <div className="content">{song.title}</div>
           </div>
-          <div className="content">{song.title}</div>
-        </div>
-      );
-    });
-  }
+        );
+      })}
+    </div>
+  );
+};
 
-  render() {
-    return <div className="ui divided list">{this.renderList()}</div>;
-  }
-}
-
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
+  console.log("state", state);
   return { songs: state.songs };
 };
 
-export default connect(
-  mapStateToProps,
-  { selectSong }
-)(SongList);
+export default connect(mapStateToProps, { selectSong })(SongList);
