@@ -1,0 +1,25 @@
+.music-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../images/sky.jpeg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.cd {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1000px;
+  margin: auto;
+  background-image: url("../../images/cd.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
