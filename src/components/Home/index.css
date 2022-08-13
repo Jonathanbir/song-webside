@@ -10,11 +10,22 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: 400px;
-  height: 600px;
+  width: 80%;
+  height: 700px;
   margin: auto;
   background-image: url("../../images/eso.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.music-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  background-color: #fff;
 }
