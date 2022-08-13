@@ -1,11 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { applyMiddleware, createStore } from "redux";
+// Logger with default options
+import logger from "redux-logger";
+import App from "./components/App";
+import reducers from "./reducers";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
+ReactDOM.render(
+  <Provider store={createStore(reducers, applyMiddleware(logger))}>
     <App />
-  </React.StrictMode>
+  </Provider>,
+  document.querySelector("#root")
 );
