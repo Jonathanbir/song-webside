@@ -1,19 +1,15 @@
 import React from "react";
-import SongList from "./SongList";
-import SongDetail from "./SongDetail";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Music from "./Music";
+import "../App.css";
 
 const App = () => {
   return (
-    <div className="ui container grid">
-      <div className="ui row">
-        <div className="column eight wide">
-          <SongList />
-        </div>
-        <div className="column eight wide">
-          <SongDetail />
-        </div>
-      </div>
-    </div>
+    <Routes>
+      <Route index element={<Home />} />
+      <Route path="music" element={<Music />} />
+    </Routes>
   );
 };
 
