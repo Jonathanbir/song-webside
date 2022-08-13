@@ -2,7 +2,25 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background-color: #000;
+  background-image: url("../../images/sky.jpeg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.home-background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 700px;
+  margin: auto;
+  background-image: url("../../images/home-backgound.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .eso {
@@ -11,10 +29,37 @@
   right: 0;
   bottom: 0;
   width: 80%;
-  height: 700px;
+  height: 800px;
   margin: auto;
   background-image: url("../../images/eso.png");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bird {
+  position: absolute;
+  left: -100px;
+  right: 0;
+  bottom: -160px;
+  width: 70%;
+  height: 600px;
+  background-image: url("../../images/bird.png");
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tree {
+  position: absolute;
+  left: 400px;
+  right: 0px;
+  bottom: -100px;
+  width: 90%;
+  height: 600px;
+  transform: rotate(150deg);
+  background-image: url("../../images/tree.png");
+  background-size: 40%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -24,8 +69,62 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin: auto;
+}
+
+.music-btn::before {
+  content: "";
+  position: relative;
+  left: 0;
+  top: -50px;
+  width: 100%;
+  height: 100%;
+  border: 1px #fff solid;
+  display: block;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-box-shadow: 0 0 30px rgb(0 0 0 / 60%);
+  box-shadow: 0 0 30px rgb(0 0 0 / 60%);
+  background: rgba(78, 76, 76, 0.3);
+  transition: all 1s ease-in-out;
+}
+
+.music-btn:hover::before {
+  content: "";
   background-color: #fff;
+}
+
+.font-icon-headphones {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -35px;
+  z-index: 9;
+  font-size: 20px;
+  margin: auto;
+  color: #fff;
+  cursor: pointer;
+}
+
+.music-btn p {
+  position: absolute;
+  left: 0;
+  right: 5px;
+  top: -15px;
+  z-index: 9;
+  width: 25px;
+  font-size: 3px;
+  color: #fff;
+  margin: auto;
+}
+
+.music-btn:hover p {
+  color: rgb(38, 37, 37);
+}
+
+.music-btn:hover .font-icon-headphones {
+  color: rgb(38, 37, 37);
 }
