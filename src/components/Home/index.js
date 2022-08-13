@@ -62,7 +62,11 @@ const Tree = () => {
 const Home = () => {
   return (
     <div className="container">
+      <div className="menu">
+        <div className="menu-line" />
+      </div>
       <BackGround />
+      <div className="logo" />
       <Eso />
       <Bird />
       <Tree />
