@@ -3,71 +3,98 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeadphonesSimple } from "@fortawesome/free-solid-svg-icons";
 import { useGlobalMouseMove } from "../../hooks/useGlobalMouseMove";
+import { useMedia } from "../../hooks/useMedia";
 import "./index.css";
 
-const BackGround = () => {
+const BackGround = ({ media }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <div
       className="home-background"
-      style={{
-        transform: `translate(${10 * mouseX}px, ${-50 * mouseY}px) scale(1.2)`,
-      }}
+      style={
+        media === "desktop"
+          ? {
+              transform: `translate(${10 * mouseX}px, ${
+                -50 * mouseY
+              }px) scale(1.2)`,
+            }
+          : {}
+      }
     />
   );
 };
 
-const Eso = () => {
+const Eso = ({ media }) => {
   const [mouseX] = useGlobalMouseMove();
 
   return (
     <div
       className="eso"
-      style={{
-        transform: `translate( ${30 * mouseX}px)`,
-      }}
+      style={
+        media === "desktop"
+          ? {
+              transform: `translate( ${30 * mouseX}px)`,
+            }
+          : {}
+      }
     />
   );
 };
 
-const Bird = () => {
+const Bird = ({ media }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <div
       className="bird"
-      style={{
-        transform: `translate(${10 * mouseX}px, ${-50 * mouseY}px) scale(1.2)`,
-      }}
+      style={
+        media === "desktop"
+          ? {
+              transform: `translate(${10 * mouseX}px, ${
+                -50 * mouseY
+              }px) scale(1.2)`,
+            }
+          : {}
+      }
     />
   );
 };
 
-const Tree = () => {
+const Tree = ({ media }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <div
       className="tree"
-      style={{
-        transform: `translate(${10 * mouseX}px, ${
-          -50 * mouseY
-        }px) scale(1.2) rotate(30deg)`,
-      }}
+      style={
+        media === "desktop"
+          ? {
+              transform: `translate(${10 * mouseX}px, ${
+                -50 * mouseY
+              }px) scale(1.2) rotate(10deg)`,
+            }
+          : {}
+      }
     />
   );
 };
 
-const Cloud01 = () => {
+const Cloud01 = ({ media }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <div
       className="cloud-three cloud-01"
-      style={{
-        transform: `translate(${30 * mouseX}px, ${-30 * mouseY}px) scale(1.2) `,
-      }}
+      style={
+        media === "desktop"
+          ? {
+              transform: `translate(${30 * mouseX}px, ${
+                -30 * mouseY
+              }px) scale(1.2) `,
+            }
+          : {}
+      }
     />
   );
 };
@@ -87,15 +114,21 @@ const Cloud02 = () => {
   );
 };
 
-const Cloud03 = () => {
+const Cloud03 = ({ media }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <div
       className="cloud-one cloud-03"
-      style={{
-        transform: `translate(${-30 * mouseX}px, ${30 * mouseY}px) scale(1.2) `,
-      }}
+      style={
+        media === "desktop"
+          ? {
+              transform: `translate(${-30 * mouseX}px, ${
+                30 * mouseY
+              }px) scale(1.2) `,
+            }
+          : {}
+      }
     />
   );
 };
@@ -114,20 +147,23 @@ const Cloud04 = () => {
 };
 
 const Home = () => {
+  const media = useMedia();
   return (
     <div className="container">
       <div className="menu">
         <div className="menu-line" />
       </div>
-      <BackGround />
-      <div className="logo" />
-      <Eso />
-      <Cloud01 />
-      <Cloud02 />
-      <Cloud03 />
-      <Cloud04 />
-      <Bird />
-      <Tree />
+      <BackGround media={media} />
+      <Link className="link-logo" to="/">
+        <div className="logo" />
+      </Link>
+      <Eso media={media} />
+      <Cloud01 media={media} />
+      {media === "desktop" && <Cloud02 />}
+      <Cloud03 media={media} />
+      {media === "desktop" && <Cloud04 />}
+      <Bird media={media} />
+      <Tree media={media} />
       <Link className="nav-link" to="music">
         <div className="music-btn">
           <FontAwesomeIcon

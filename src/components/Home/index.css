@@ -16,6 +16,7 @@
   top: -50px;
   left: 0;
   right: 0;
+  z-index: 9;
   width: 100px;
   height: 300px;
   margin: auto;
@@ -23,6 +24,7 @@
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .menu {
@@ -239,4 +241,57 @@
 
 .music-btn:hover .font-icon-headphones {
   color: rgb(38, 37, 37);
+}
+
+@media screen and (max-width: 768px) {
+  .home-background {
+    height: 60vh;
+    background-size: cover;
+  }
+
+  .eso {
+    height: 485px;
+  }
+
+  .bird {
+    left: -35%;
+    bottom: -24%;
+    width: 100%;
+    height: 600px;
+  }
+
+  .tree {
+    left: 4%;
+    bottom: -19%;
+    width: 150%;
+    height: 600px;
+  }
+
+  .logo {
+    top: 50px;
+    width: 200px;
+    height: 300px;
+  }
+
+  .cloud-01 {
+    left: 45%;
+  }
+
+  .cloud-three {
+    top: 32%;
+    width: 80%;
+    height: 300px;
+    background-size: 50%;
+  }
+
+  .cloud-03 {
+    left: -39%;
+    top: 43%;
+  }
+
+  .cloud-one {
+    width: 82%;
+    height: 300px;
+    background-size: 63%;
+  }
 }

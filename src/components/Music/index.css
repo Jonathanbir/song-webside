@@ -9,6 +9,10 @@
   overflow: hidden;
 }
 
+.music-logo {
+  left: -40%;
+}
+
 .cd {
   position: absolute;
   left: 0;
@@ -87,5 +91,26 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .music-logo {
+    left: 0;
+    width: 20%;
+    top: -4%;
+  }
+
+  .cd:before {
+    width: 100px;
+    height: 100px;
+  }
+
+  .music-container p {
+    bottom: 39%;
+  }
+
+  .player_container {
+    bottom: 23%;
   }
 }
