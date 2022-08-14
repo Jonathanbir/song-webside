@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   bottom: 50px;
-  width: 100%;
+  width: 900px;
   height: 900px;
   margin: auto;
   background-image: url("../../images/cd.png");
@@ -22,20 +22,44 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.cd:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  background-image: url("../../images/eso-circle.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  box-shadow: 0 0 60px rgb(0 0 0 / 40%);
+}
+
+.cd:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border-radius: 100%;
+  box-shadow: 0 0 60px rgb(0 0 0 / 40%);
+}
+
 .animate {
   animation: rotate 2s linear infinite;
   -moz-animation: rotate 2s linear infinite; /* Firefox */
   -webkit-animation: rotate 2s linear infinite; /* Safari and Chrome */
   -o-animation: rotate 2s linear infinite; /* Opera */
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .music-container p {
@@ -44,14 +68,16 @@
   right: 0;
   bottom: 150px;
   z-index: 5;
-  width: 100px;
+  width: 150px;
   font-size: 15px;
-  color: #fff;
+  text-align: center;
+  color: #000;
   margin: auto;
 }
 
 .song-title {
-  font-size: 25px;
+  font-size: 18px;
+  font-weight: 900;
 }
 
 .control-container {
@@ -66,4 +92,13 @@
   align-items: center;
   width: 300px;
   margin: auto;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

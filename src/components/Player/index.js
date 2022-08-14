@@ -18,6 +18,7 @@ const Player = ({
 }) => {
   const clickRef = useRef();
 
+  console.log("isplaying", isplaying);
   const PlayPause = () => {
     setisplaying(!isplaying);
   };
@@ -31,6 +32,7 @@ const Player = ({
   };
 
   const skipBack = () => {
+    setisplaying(false);
     const index = songs.findIndex((x) => x.title == currentSong.title);
     if (index == 0) {
       setCurrentSong(songs[songs.length - 1]);
@@ -38,6 +40,12 @@ const Player = ({
       setCurrentSong(songs[index - 1]);
     }
     audioElem.current.currentTime = 0;
+
+    setisplaying(false);
+
+    setTimeout(() => {
+      setisplaying(true);
+    }, 500);
   };
 
   const skiptoNext = () => {
@@ -49,6 +57,12 @@ const Player = ({
       setCurrentSong(songs[index + 1]);
     }
     audioElem.current.currentTime = 0;
+
+    setisplaying(false);
+
+    setTimeout(() => {
+      setisplaying(true);
+    }, 500);
   };
 
   return (

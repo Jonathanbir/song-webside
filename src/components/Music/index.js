@@ -9,7 +9,6 @@ const Music = ({ songs }) => {
 
   const audioElem = useRef();
 
-  console.log("currentSong", currentSong);
   useEffect(() => {
     if (isplaying) {
       audioElem.current.play();
