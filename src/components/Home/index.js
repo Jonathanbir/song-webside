@@ -59,6 +59,34 @@ const Tree = () => {
   );
 };
 
+const Cloud01 = () => {
+  const [mouseX, mouseY] = useGlobalMouseMove();
+
+  return (
+    <div
+      className="cloud-01"
+      style={{
+        transform: `translate(${30 * mouseX}px, ${-30 * mouseY}px) scale(1.2) `,
+      }}
+    />
+  );
+};
+
+const Cloud02 = () => {
+  const [mouseX, mouseY] = useGlobalMouseMove();
+
+  return (
+    <div
+      className="cloud-02"
+      style={{
+        transform: `translate(${-30 * mouseX}px, ${
+          30 * mouseY
+        }px) scale(1.2) rotate(200deg)`,
+      }}
+    />
+  );
+};
+
 const Home = () => {
   return (
     <div className="container">
@@ -68,6 +96,8 @@ const Home = () => {
       <BackGround />
       <div className="logo" />
       <Eso />
+      <Cloud01 />
+      <Cloud02 />
       <Bird />
       <Tree />
       <Link className="nav-link" to="music">

@@ -2,7 +2,8 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url("../../images/sky.jpeg");
+  background-color: rgb(137, 239, 215);
+  //background-image: url("../../images/sky.jpeg");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -129,6 +130,32 @@
   background-repeat: no-repeat;
 }
 
+.cloud-01 {
+  position: absolute;
+  left: 100px;
+  right: 0;
+  top: 60px;
+  width: 50%;
+  height: 300px;
+  background-image: url("../../images//cloud01.png");
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cloud-02 {
+  position: absolute;
+  left: 800px;
+  right: 0px;
+  top: 60px;
+  width: 50%;
+  height: 300px;
+  background-image: url("../../images//cloud01.png");
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .music-btn {
   position: absolute;
   left: 0;
@@ -137,6 +164,7 @@
   width: 60px;
   height: 60px;
   margin: auto;
+  z-index: 1;
 }
 
 .music-btn::before {

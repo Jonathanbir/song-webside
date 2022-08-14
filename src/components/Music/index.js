@@ -26,6 +26,10 @@ const Music = ({ songs }) => {
       progress: (ct / duration) * 100,
       length: duration,
     });
+
+    if (duration === ct) {
+      setisplaying(false);
+    }
   };
 
   return (

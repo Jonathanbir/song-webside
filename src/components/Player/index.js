@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import "./index.css";
 import {
   BsFillPlayCircleFill,
@@ -18,7 +18,6 @@ const Player = ({
 }) => {
   const clickRef = useRef();
 
-  console.log("isplaying", isplaying);
   const PlayPause = () => {
     setisplaying(!isplaying);
   };
