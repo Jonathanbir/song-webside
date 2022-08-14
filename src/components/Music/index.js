@@ -31,7 +31,7 @@ const Music = ({ songs }) => {
 
   return (
     <div className="music-container">
-      <div className="cd" />
+      <div className={isplaying ? "cd animate" : "cd"} />
       <audio src={currentSong.url} ref={audioElem} onTimeUpdate={onPlaying} />
       <p>
         ESO 靈魂出竅 Outta Body <br />
