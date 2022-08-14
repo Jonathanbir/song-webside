@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
+import { connect, useDispatch } from "react-redux";
+import { playSong } from "../../reducers/songs.action";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import SongList from "../SongList";
-import SongDetail from "../SongDetail";
 import "./index.css";
 
-const Music = () => {
+const Music = ({ songs, selectedSong }) => {
   return (
     <div className="music-container">
       <SongList />
-      <div className="cd"></div>
+      <div className="cd" />
+      <audio autoPlay src={songs[1].src} />
+      <p>
+        ESO 靈魂出竅 Outta Body <br />
+        <span className="song-title">{selectedSong}</span>
+      </p>
+      <div className="control-container">
+        <FontAwesomeIcon icon={faPlay} className="play-btn" />
+      </div>
     </div>
   );
 };
+const mapStateToProps = (state) => {
+  return {
+    selectedSong: state.selectedSong.selectedSong,
+    songs: state.songs,
+  };
+};
 
-export default Music;
+export default connect(mapStateToProps)(Music);

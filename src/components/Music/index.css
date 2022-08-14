@@ -11,7 +11,6 @@
 
 .cd {
   position: absolute;
-  z-index: -1;
   left: 0;
   right: 0;
   top: 0;
@@ -23,4 +22,45 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.music-container p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 150px;
+  z-index: 5;
+  width: 100px;
+  font-size: 15px;
+  color: #fff;
+  margin: auto;
+}
+
+.song-title {
+  font-size: 25px;
+}
+
+.control-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin: auto;
+}
+
+.play-btn {
+  font-size: 20px;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  padding: 15px;
+  background-color: rgb(233, 126, 39);
+  border-radius: 100%;
+  cursor: pointer;
 }
