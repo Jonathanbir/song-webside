@@ -3,10 +3,22 @@ import { SONGS_ACTION_TYPES } from "./songs.types";
 
 const songsReducer = () => {
   return [
-    { title: "Change", src: "4:05" },
-    { title: "Wait", src: "2:30" },
-    { title: "伯父", src: "3:15" },
-    { title: "我的癮", src: "1:45" },
+    {
+      title: "Change",
+      src: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
+    },
+    {
+      title: "Wait",
+      src: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
+    },
+    {
+      title: "伯父",
+      src: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
+    },
+    {
+      title: "我的癮",
+      src: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
+    },
   ];
 };
 
