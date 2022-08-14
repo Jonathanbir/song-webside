@@ -53,14 +53,3 @@
   width: 300px;
   margin: auto;
 }
-
-.play-btn {
-  font-size: 20px;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  padding: 15px;
-  background-color: rgb(233, 126, 39);
-  border-radius: 100%;
-  cursor: pointer;
-}

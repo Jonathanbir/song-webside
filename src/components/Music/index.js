@@ -1,23 +1,50 @@
-import React, { useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
-import SongList from "../SongList";
+import Player from "../Player";
 import "./index.css";
 
-const Music = ({ songs, selectedSong }) => {
+const Music = ({ songs }) => {
+  const [isplaying, setisplaying] = useState(false);
+  const [currentSong, setCurrentSong] = useState(songs[0]);
+
+  const audioElem = useRef();
+
+  console.log("currentSong", currentSong);
+  useEffect(() => {
+    if (isplaying) {
+      audioElem.current.play();
+    } else {
+      audioElem.current.pause();
+    }
+  }, [isplaying]);
+
+  const onPlaying = () => {
+    const duration = audioElem.current.duration;
+    const ct = audioElem.current.currentTime;
+
+    setCurrentSong({
+      ...currentSong,
+      progress: (ct / duration) * 100,
+      length: duration,
+    });
+  };
+
   return (
     <div className="music-container">
-      <SongList />
       <div className="cd" />
-      <audio src={songs[1].src} />
+      <audio src={currentSong.url} ref={audioElem} onTimeUpdate={onPlaying} />
       <p>
         ESO 靈魂出竅 Outta Body <br />
-        <span className="song-title">{selectedSong}</span>
+        <span className="song-title">{currentSong.title}</span>
       </p>
-      <div className="control-container">
-        <FontAwesomeIcon icon={faPlay} className="play-btn" />
-      </div>
+      <Player
+        songs={songs}
+        isplaying={isplaying}
+        setisplaying={setisplaying}
+        audioElem={audioElem}
+        currentSong={currentSong}
+        setCurrentSong={setCurrentSong}
+      />
     </div>
   );
 };

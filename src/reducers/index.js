@@ -5,19 +5,19 @@ const songsReducer = () => {
   return [
     {
       title: "Change",
-      src: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
+      url: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
     },
     {
       title: "Wait",
-      src: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
+      url: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
     },
     {
       title: "伯父",
-      src: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
+      url: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
     },
     {
       title: "我的癮",
-      src: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
+      url: "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse",
     },
   ];
 };
