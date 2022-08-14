@@ -1,10 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import "./index.css";
 import {
   BsFillPlayCircleFill,
   BsFillPauseCircleFill,
   BsFillSkipStartCircleFill,
-  BsSkipEndCircleFill,
   BsFillSkipEndCircleFill,
 } from "react-icons/bs";
 
@@ -33,7 +32,7 @@ const Player = ({
   const skipBack = () => {
     setisplaying(false);
     const index = songs.findIndex((x) => x.title == currentSong.title);
-    if (index == 0) {
+    if (index === 0) {
       setCurrentSong(songs[songs.length - 1]);
     } else {
       setCurrentSong(songs[index - 1]);
@@ -50,7 +49,7 @@ const Player = ({
   const skiptoNext = () => {
     const index = songs.findIndex((x) => x.title == currentSong.title);
 
-    if (index == songs.length - 1) {
+    if (index === songs.length - 1) {
       setCurrentSong(songs[0]);
     } else {
       setCurrentSong(songs[index + 1]);

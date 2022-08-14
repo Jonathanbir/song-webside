@@ -64,7 +64,7 @@ const Cloud01 = () => {
 
   return (
     <div
-      className="cloud-01"
+      className="cloud-three cloud-01"
       style={{
         transform: `translate(${30 * mouseX}px, ${-30 * mouseY}px) scale(1.2) `,
       }}
@@ -77,11 +77,37 @@ const Cloud02 = () => {
 
   return (
     <div
-      className="cloud-02"
+      className="cloud-three cloud-02"
       style={{
         transform: `translate(${-30 * mouseX}px, ${
           30 * mouseY
         }px) scale(1.2) rotate(200deg)`,
+      }}
+    />
+  );
+};
+
+const Cloud03 = () => {
+  const [mouseX, mouseY] = useGlobalMouseMove();
+
+  return (
+    <div
+      className="cloud-one cloud-03"
+      style={{
+        transform: `translate(${-30 * mouseX}px, ${30 * mouseY}px) scale(1.2) `,
+      }}
+    />
+  );
+};
+
+const Cloud04 = () => {
+  const [mouseX, mouseY] = useGlobalMouseMove();
+
+  return (
+    <div
+      className="cloud-one cloud-04"
+      style={{
+        transform: `translate(${-30 * mouseX}px, ${30 * mouseY}px) scale(1.2)`,
       }}
     />
   );
@@ -98,6 +124,8 @@ const Home = () => {
       <Eso />
       <Cloud01 />
       <Cloud02 />
+      <Cloud03 />
+      <Cloud04 />
       <Bird />
       <Tree />
       <Link className="nav-link" to="music">
