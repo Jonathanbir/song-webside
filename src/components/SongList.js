@@ -29,7 +29,6 @@ const SongList = ({ songs }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log("state", state);
   return { songs: state.songs };
 };
 

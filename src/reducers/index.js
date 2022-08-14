@@ -44,7 +44,6 @@ const SONGS_INITIAL_STATE = {
 
 const selectedSongReducer = (state = SONGS_INITIAL_STATE, action) => {
   const { type, payload } = action;
-  console.log("payload", payload);
   switch (type) {
     case SONGS_ACTION_TYPES.SET_SONG_SELECTED:
       return payload.title;

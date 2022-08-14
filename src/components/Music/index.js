@@ -33,7 +33,10 @@ const Music = ({ songs }) => {
   };
 
   return (
-    <div className="music-container">
+    <div
+      className="music-container"
+      style={isplaying ? { zIndex: "initial" } : { zIndex: "1" }}
+    >
       <div className={isplaying ? "cd animate" : "cd"} />
       <audio src={currentSong.url} ref={audioElem} onTimeUpdate={onPlaying} />
       <p>
