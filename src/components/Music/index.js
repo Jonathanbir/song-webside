@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import Navigation from "../Navigation";
 import Player from "../Player";
 import "./index.css";
 
@@ -38,9 +39,7 @@ const Music = ({ songs }) => {
       className="music-container"
       style={isplaying ? { zIndex: "initial" } : { zIndex: "1" }}
     >
-      <div className="menu">
-        <div className="menu-line" />
-      </div>
+      <Navigation />
       <Link className="link-logo" to="/">
         <div className="logo music-logo" />
       </Link>

@@ -1,0 +1,102 @@
+.nav-container {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menu {
+  position: relative;
+  left: 10px;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.menu-line {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  width: 20px;
+  height: 2px;
+  margin: auto;
+  background-color: #fff;
+}
+
+.menu-line::before {
+  position: absolute;
+  top: 6px;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu:hover .menu-line::before {
+  position: absolute;
+  top: 8px;
+}
+
+.menu-line::after {
+  position: absolute;
+  top: -6px;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu:hover .menu-line::after {
+  position: absolute;
+  top: -8px;
+}
+
+.social-media {
+  position: relative;
+  top: 20px;
+  right: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.font-icon {
+  font-size: 18px;
+  margin: auto;
+  color: #fff;
+  margin: 010px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.font-icon:hover {
+  font-size: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    top: 2%;
+    align-items: initial;
+  }
+
+  .menu-line {
+    top: 0;
+  }
+
+  .social-media {
+    flex-direction: column;
+  }
+
+  .font-icon:hover {
+    font-size: initial;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeadphonesSimple } from "@fortawesome/free-solid-svg-icons";
+import Navigation from "../Navigation";
+import { FaHeadphonesAlt } from "react-icons/fa";
 import { useGlobalMouseMove } from "../../hooks/useGlobalMouseMove";
 import { useMedia } from "../../hooks/useMedia";
 import "./index.css";
@@ -150,9 +150,7 @@ const Home = () => {
   const media = useMedia();
   return (
     <div className="container">
-      <div className="menu">
-        <div className="menu-line" />
-      </div>
+      <Navigation />
       <BackGround media={media} />
       <Link className="link-logo" to="/">
         <div className="logo" />
@@ -166,10 +164,7 @@ const Home = () => {
       <Tree media={media} />
       <Link className="nav-link" to="music">
         <div className="music-btn">
-          <FontAwesomeIcon
-            className="font-icon-headphones"
-            icon={faHeadphonesSimple}
-          />
+          <FaHeadphonesAlt className="font-icon-headphones" />
           <p>Listen</p>
         </div>
       </Link>
