@@ -1,4 +1,7 @@
 import React, { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCurrentSong } from "../../reducers/songs.selector";
+import { setCurrentSong } from "../../reducers/songs.action";
 import "./index.css";
 import {
   BsFillPlayCircleFill,
@@ -7,15 +10,10 @@ import {
   BsFillSkipEndCircleFill,
 } from "react-icons/bs";
 
-const Player = ({
-  audioElem,
-  isplaying,
-  setisplaying,
-  currentSong,
-  setCurrentSong,
-  songs,
-}) => {
+const Player = ({ audioElem, isplaying, setisplaying, songs }) => {
+  const dispatch = useDispatch();
   const clickRef = useRef();
+  const currentSong = useSelector(selectCurrentSong);
 
   const PlayPause = () => {
     setisplaying(!isplaying);
@@ -33,9 +31,9 @@ const Player = ({
     setisplaying(false);
     const index = songs.findIndex((x) => x.title == currentSong.title);
     if (index === 0) {
-      setCurrentSong(songs[songs.length - 1]);
+      dispatch(setCurrentSong(songs[songs.length - 1]));
     } else {
-      setCurrentSong(songs[index - 1]);
+      dispatch(setCurrentSong(songs[index - 1]));
     }
     audioElem.current.currentTime = 0;
 
@@ -50,9 +48,9 @@ const Player = ({
     const index = songs.findIndex((x) => x.title == currentSong.title);
 
     if (index === songs.length - 1) {
-      setCurrentSong(songs[0]);
+      dispatch(setCurrentSong(songs[0]));
     } else {
-      setCurrentSong(songs[index + 1]);
+      dispatch(setCurrentSong(songs[index + 1]));
     }
     audioElem.current.currentTime = 0;
 

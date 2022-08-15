@@ -6,3 +6,6 @@ export const selectSong = (song) =>
 
 export const setIsMenuOpen = (boolean) =>
   createAction(SONGS_ACTION_TYPES.SET_IS_MENU_OPNE, boolean);
+
+export const setCurrentSong = (song) =>
+  createAction(SONGS_ACTION_TYPES.SET_CURRENT_SONG, song);

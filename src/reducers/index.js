@@ -38,15 +38,18 @@ const songs = [
 
 const SONGS_INITIAL_STATE = {
   songs: songs,
-  selectedSong: null,
+  currentSong: songs[0],
   isMenuOpen: false,
 };
 
 const songsReducer = (state = SONGS_INITIAL_STATE, action) => {
   const { type, payload } = action;
   switch (type) {
-    case SONGS_ACTION_TYPES.SET_SONG_SELECTED:
-      return payload.title;
+    case SONGS_ACTION_TYPES.SET_CURRENT_SONG:
+      return {
+        ...state,
+        currentSong: payload,
+      };
     case SONGS_ACTION_TYPES.SET_IS_MENU_OPNE:
       return {
         ...state,

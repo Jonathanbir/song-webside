@@ -1,13 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import { useDispatch, useSelector, connect } from "react-redux";
 import Navigation from "../Navigation";
 import Player from "../Player";
+import { selectCurrentSong } from "../../reducers/songs.selector";
+import { setCurrentSong } from "../../reducers/songs.action";
 import "./index.css";
 
 const Music = ({ songs }) => {
+  const dispatch = useDispatch();
+  const currentSong = useSelector(selectCurrentSong);
+
   const [isplaying, setisplaying] = useState(false);
-  const [currentSong, setCurrentSong] = useState(songs[0]);
 
   const audioElem = useRef();
 
@@ -23,11 +27,13 @@ const Music = ({ songs }) => {
     const duration = audioElem.current.duration;
     const ct = audioElem.current.currentTime;
 
-    setCurrentSong({
-      ...currentSong,
-      progress: (ct / duration) * 100,
-      length: duration,
-    });
+    dispatch(
+      setCurrentSong({
+        ...currentSong,
+        progress: (ct / duration) * 100,
+        length: duration,
+      })
+    );
 
     if (duration === ct) {
       setisplaying(false);
@@ -54,15 +60,12 @@ const Music = ({ songs }) => {
         isplaying={isplaying}
         setisplaying={setisplaying}
         audioElem={audioElem}
-        currentSong={currentSong}
-        setCurrentSong={setCurrentSong}
       />
     </div>
   );
 };
 const mapStateToProps = (state) => {
   return {
-    selectedSong: state.songs.selectedSong,
     songs: state.songs.songs,
   };
 };
