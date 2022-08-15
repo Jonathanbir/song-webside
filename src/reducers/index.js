@@ -40,6 +40,7 @@ const SONGS_INITIAL_STATE = {
   songs: songs,
   currentSong: songs[0],
   isMenuOpen: false,
+  isplaying: false,
 };
 
 const songsReducer = (state = SONGS_INITIAL_STATE, action) => {
@@ -49,6 +50,11 @@ const songsReducer = (state = SONGS_INITIAL_STATE, action) => {
       return {
         ...state,
         currentSong: payload,
+      };
+    case SONGS_ACTION_TYPES.SET_PLAY_SONG:
+      return {
+        ...state,
+        isplaying: payload,
       };
     case SONGS_ACTION_TYPES.SET_IS_MENU_OPNE:
       return {

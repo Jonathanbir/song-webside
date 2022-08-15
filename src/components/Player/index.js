@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, connect } from "react-redux";
 import { selectCurrentSong } from "../../reducers/songs.selector";
-import { setCurrentSong } from "../../reducers/songs.action";
+import { setCurrentSong, setPlaySong } from "../../reducers/songs.action";
 import "./index.css";
 import {
   BsFillPlayCircleFill,
@@ -10,13 +10,13 @@ import {
   BsFillSkipEndCircleFill,
 } from "react-icons/bs";
 
-const Player = ({ audioElem, isplaying, setisplaying, songs }) => {
+const Player = ({ audioElem, isplaying, songs }) => {
   const dispatch = useDispatch();
   const clickRef = useRef();
   const currentSong = useSelector(selectCurrentSong);
 
   const PlayPause = () => {
-    setisplaying(!isplaying);
+    dispatch(setPlaySong(!isplaying));
   };
 
   const checkWidth = (e) => {
@@ -28,7 +28,7 @@ const Player = ({ audioElem, isplaying, setisplaying, songs }) => {
   };
 
   const skipBack = () => {
-    setisplaying(false);
+    dispatch(setPlaySong(false));
     const index = songs.findIndex((x) => x.title == currentSong.title);
     if (index === 0) {
       dispatch(setCurrentSong(songs[songs.length - 1]));
@@ -37,10 +37,10 @@ const Player = ({ audioElem, isplaying, setisplaying, songs }) => {
     }
     audioElem.current.currentTime = 0;
 
-    setisplaying(false);
+    dispatch(setPlaySong(false));
 
     setTimeout(() => {
-      setisplaying(true);
+      dispatch(setPlaySong(true));
     }, 500);
   };
 
@@ -54,10 +54,10 @@ const Player = ({ audioElem, isplaying, setisplaying, songs }) => {
     }
     audioElem.current.currentTime = 0;
 
-    setisplaying(false);
+    dispatch(setPlaySong(false));
 
     setTimeout(() => {
-      setisplaying(true);
+      dispatch(setPlaySong(true));
     }, 500);
   };
 
@@ -87,4 +87,11 @@ const Player = ({ audioElem, isplaying, setisplaying, songs }) => {
   );
 };
 
-export default Player;
+const mapStateToProps = (state) => {
+  return {
+    songs: state.songs.songs,
+    isplaying: state.songs.isplaying,
+  };
+};
+
+export default connect(mapStateToProps)(Player);
