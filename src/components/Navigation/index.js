@@ -8,6 +8,7 @@ import {
   FaInstagram,
   FaSoundcloud,
   FaSpotify,
+  FaArrowLeft,
 } from "react-icons/fa";
 import "./index.css";
 
@@ -18,9 +19,16 @@ const Navigation = () => {
 
   return (
     <div className="nav-container">
-      <div className="menu" onClick={toggleisMenuOpen}>
-        <div className="menu-line" />
-      </div>
+      {!isMenuOpen ? (
+        <div className="menu" onClick={toggleisMenuOpen}>
+          <div className="menu-line" />
+        </div>
+      ) : (
+        <FaArrowLeft
+          className="close-btn"
+          onClick={() => dispatch(setIsMenuOpen(false))}
+        />
+      )}
       <div className="social-media">
         <a
           target="_blank"
