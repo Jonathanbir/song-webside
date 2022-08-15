@@ -13,8 +13,3 @@ export const selectIsPlaySong = createSelector(
   [songsReducer],
   (state) => state.isplaying
 );
-
-export const selectIsMenuOpen = createSelector(
-  [songsReducer],
-  (state) => state.isMenuOpen
-);

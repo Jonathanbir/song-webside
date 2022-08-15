@@ -76,15 +76,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .nav-container {
-    top: 2%;
-    align-items: initial;
-  }
-
-  .menu-line {
-    top: 0;
-  }
-
   .social-media {
     flex-direction: column;
   }

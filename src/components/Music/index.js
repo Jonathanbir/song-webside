@@ -49,7 +49,7 @@ const Music = ({ songs, isplaying }) => {
       </Link>
       <div className={isplaying ? "cd animate" : "cd"} />
       <audio src={currentSong.url} ref={audioElem} onTimeUpdate={onPlaying} />
-      <p>
+      <p className="music-title">
         ESO 靈魂出竅 Outta Body <br />
         <span className="song-title">{currentSong.title}</span>
       </p>

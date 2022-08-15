@@ -1,12 +1,16 @@
 import React from "react";
-import Navigation from "../Navigation";
+import { motion } from "framer-motion";
 import "./index.css";
 
 const Menu = () => {
   return (
     <>
-      <div className="menu-container">
-        <Navigation />
+      <motion.div
+        className="menu-container"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="intro">
           <h1>瘦子 E.SO</h1>
           <div className="eso-intro" />
@@ -41,7 +45,7 @@ const Menu = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

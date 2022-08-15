@@ -54,7 +54,7 @@
   -o-animation: rotate 2s linear infinite; /* Opera */
 }
 
-.music-container p {
+.music-container .music-title {
   position: absolute;
   left: 0;
   right: 0;
@@ -107,7 +107,7 @@
     height: 100px;
   }
 
-  .music-container p {
+  .music-container .music-title {
     bottom: 39%;
   }
 
