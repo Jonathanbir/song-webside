@@ -1,4 +1,7 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectIsMenuOpen } from "../../reducers/songs.selector";
+import { setIsMenuOpen } from "../../reducers/songs.action";
 import {
   FaFacebookF,
   FaYoutube,
@@ -9,9 +12,13 @@ import {
 import "./index.css";
 
 const Navigation = () => {
+  const isMenuOpen = useSelector(selectIsMenuOpen);
+  const dispatch = useDispatch();
+  const toggleisMenuOpen = () => dispatch(setIsMenuOpen(!isMenuOpen));
+
   return (
     <div className="nav-container">
-      <div className="menu">
+      <div className="menu" onClick={toggleisMenuOpen}>
         <div className="menu-line" />
       </div>
       <div className="social-media">

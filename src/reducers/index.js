@@ -40,13 +40,19 @@ const songsReducer = () => {
 
 const SONGS_INITIAL_STATE = {
   selectedSong: null,
+  isMenuOpen: false,
 };
 
-const selectedSongReducer = (state = SONGS_INITIAL_STATE, action) => {
+const stateReducer = (state = SONGS_INITIAL_STATE, action) => {
   const { type, payload } = action;
   switch (type) {
     case SONGS_ACTION_TYPES.SET_SONG_SELECTED:
       return payload.title;
+    case SONGS_ACTION_TYPES.SET_IS_MENU_OPNE:
+      return {
+        ...state,
+        isMenuOpen: payload,
+      };
     default:
       return state;
   }
@@ -54,5 +60,5 @@ const selectedSongReducer = (state = SONGS_INITIAL_STATE, action) => {
 
 export default combineReducers({
   songs: songsReducer,
-  selectedSong: selectedSongReducer,
+  state: stateReducer,
 });
