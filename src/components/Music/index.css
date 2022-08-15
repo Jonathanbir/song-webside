@@ -11,6 +11,7 @@
 
 .music-logo {
   left: -40%;
+  z-index: 2;
 }
 
 .cd {

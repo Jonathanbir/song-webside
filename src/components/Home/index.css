@@ -16,7 +16,7 @@
   top: -50px;
   left: 0;
   right: 0;
-  z-index: 9;
+  z-index: 1;
   width: 100px;
   height: 300px;
   margin: auto;
@@ -217,8 +217,7 @@
 
   .logo {
     top: 4%;
-    width: 200px;
-    height: 300px;
+    width: 40%;
   }
 
   .cloud-01 {
