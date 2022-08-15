@@ -1,34 +1,53 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectIsMenuOpen } from "../../reducers/songs.selector";
-import { setIsMenuOpen } from "../../reducers/songs.action";
+import { useRef } from "react";
+import { motion, useCycle } from "framer-motion";
+import { useDimensions } from "../../hooks/useDimensions";
+import { MenuToggle } from "../MenuToggle";
 import {
   FaFacebookF,
   FaYoutube,
   FaInstagram,
   FaSoundcloud,
   FaSpotify,
-  FaArrowLeft,
 } from "react-icons/fa";
 import "./index.css";
 
 const Navigation = () => {
-  const isMenuOpen = useSelector(selectIsMenuOpen);
-  const dispatch = useDispatch();
-  const toggleisMenuOpen = () => dispatch(setIsMenuOpen(!isMenuOpen));
+  const [isOpen, toggleOpen] = useCycle(false, true);
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
+  console.log("height", height);
+  const sidebar = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2,
+      },
+    }),
+    closed: {
+      clipPath: "circle(30px at 40px 40px)",
+      transition: {
+        delay: 0.5,
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      },
+    },
+  };
 
   return (
     <div className="nav-container">
-      {!isMenuOpen ? (
-        <div className="menu" onClick={toggleisMenuOpen}>
-          <div className="menu-line" />
-        </div>
-      ) : (
-        <FaArrowLeft
-          className="close-btn"
-          onClick={() => dispatch(setIsMenuOpen(false))}
-        />
-      )}
+      <motion.nav
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+      >
+        <motion.div className="menu-background" variants={sidebar} />
+        <MenuToggle className="menu" toggle={() => toggleOpen()} />
+      </motion.nav>
       <div className="social-media">
         <a
           target="_blank"
