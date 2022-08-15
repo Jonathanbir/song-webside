@@ -29,7 +29,7 @@ const Player = ({ audioElem, isplaying, songs }) => {
 
   const skipBack = () => {
     dispatch(setPlaySong(false));
-    const index = songs.findIndex((x) => x.title == currentSong.title);
+    const index = songs.findIndex((x) => x.title === currentSong.title);
     if (index === 0) {
       dispatch(setCurrentSong(songs[songs.length - 1]));
     } else {
@@ -45,7 +45,7 @@ const Player = ({ audioElem, isplaying, songs }) => {
   };
 
   const skiptoNext = () => {
-    const index = songs.findIndex((x) => x.title == currentSong.title);
+    const index = songs.findIndex((x) => x.title === currentSong.title);
 
     if (index === songs.length - 1) {
       dispatch(setCurrentSong(songs[0]));

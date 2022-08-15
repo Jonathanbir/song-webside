@@ -1,9 +1,13 @@
 import React from "react";
+import { useRef } from "react";
+import { motion, useCycle } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
 import { FaHeadphonesAlt } from "react-icons/fa";
 import { useGlobalMouseMove } from "../../hooks/useGlobalMouseMove";
 import { useMedia } from "../../hooks/useMedia";
+import { useDimensions } from "../../hooks/useDimensions";
+import { MenuToggle } from "../MenuToggle";
 import "./index.css";
 
 const BackGround = ({ media }) => {
@@ -148,9 +152,41 @@ const Cloud04 = () => {
 
 const Home = () => {
   const media = useMedia();
+  const [isOpen, toggleOpen] = useCycle(false, true);
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
+  console.log("height", height);
+  const sidebar = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2,
+      },
+    }),
+    closed: {
+      clipPath: "circle(30px at 40px 40px)",
+      transition: {
+        delay: 0.5,
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      },
+    },
+  };
+
   return (
     <div className="container">
-      <Navigation />
+      <motion.nav
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+      >
+        <motion.div className="menu-background" variants={sidebar} />
+        <MenuToggle toggle={() => toggleOpen()} />
+      </motion.nav>
       <BackGround media={media} />
       <Link className="link-logo" to="/">
         <div className="logo" />
