@@ -62,8 +62,8 @@ const Music = ({ songs }) => {
 };
 const mapStateToProps = (state) => {
   return {
-    selectedSong: state.selectedSong.selectedSong,
-    songs: state.songs,
+    selectedSong: state.songs.selectedSong,
+    songs: state.songs.songs,
   };
 };
 

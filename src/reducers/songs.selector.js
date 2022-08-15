@@ -1,7 +1,7 @@
 import { createSelector } from "reselect";
 
 const selectSongsReducer = (state) => {
-  return state.state;
+  return state.songs;
 };
 
 export const selectIsMenuOpen = createSelector(
