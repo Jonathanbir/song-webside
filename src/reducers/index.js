@@ -10,6 +10,7 @@ const SONGS_INITIAL_STATE = {
   currentAlbum: albums[0],
   isplaying: false,
   isMenuOpen: false,
+  isAlbumOpen: false,
 };
 
 const songsReducer = (state = SONGS_INITIAL_STATE, action) => {
@@ -19,6 +20,11 @@ const songsReducer = (state = SONGS_INITIAL_STATE, action) => {
       return {
         ...state,
         isMenuOpen: payload,
+      };
+    case SONGS_ACTION_TYPES.SET_IS_ALBUM_OPNE:
+      return {
+        ...state,
+        isAlbumOpen: payload,
       };
     case SONGS_ACTION_TYPES.SET_CURRENT_ALBUM:
       return {

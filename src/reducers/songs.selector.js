@@ -9,6 +9,11 @@ export const selectIsMenuOpen = createSelector(
   (state) => state.isMenuOpen
 );
 
+export const selectIsAlbumOpen = createSelector(
+  [songsReducer],
+  (state) => state.isAlbumOpen
+);
+
 export const selectCurrentAlbum = createSelector(
   [songsReducer],
   (state) => state.currentAlbum
