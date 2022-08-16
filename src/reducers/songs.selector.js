@@ -4,6 +4,11 @@ const songsReducer = (state) => {
   return state.songs;
 };
 
+export const selectIsMenuOpen = createSelector(
+  [songsReducer],
+  (state) => state.isMenuOpen
+);
+
 export const selectCurrentAlbum = createSelector(
   [songsReducer],
   (state) => state.currentAlbum
@@ -18,4 +23,3 @@ export const selectIsPlaySong = createSelector(
   [songsReducer],
   (state) => state.isplaying
 );
-

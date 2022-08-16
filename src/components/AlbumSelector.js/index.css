@@ -1,0 +1,134 @@
+.album-selector {
+  position: absolute;
+  top: 40%;
+  left: 1%;
+  z-index: 9;
+}
+
+.album-music-selector {
+  position: absolute;
+  top: 40%;
+  left: 1%;
+  z-index: 9;
+}
+
+.album-select-ball {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-size: 100%;
+  margin: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.album-ball-01 {
+  position: relative;
+  background-image: url("https://i.kfs.io/album/global/156874028,1v1/fit/500x500.jpg");
+  transition: all 0.5s ease-in-out;
+}
+
+.album-ball-01:hover {
+  transform: scale(1.5) !important;
+  top: -20px;
+}
+
+.album-ball-01::before {
+  display: none;
+  content: "Earth Bouce";
+  position: absolute;
+  left: 10%;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+  margin: auto;
+  font-size: 15px;
+  color: #fff;
+}
+
+.album-ball-01:hover::before {
+  display: block;
+}
+
+.album-ball-02 {
+  position: relative;
+  background-image: url("https://www.truecolor.mu/images/album/1595391819595936644.jpg");
+  transition: all 0.5s ease-in-out;
+}
+
+.album-ball-02:hover {
+  transform: scale(1.5) !important;
+  top: 20px;
+}
+
+.album-ball-02::before {
+  display: none;
+  content: "Outta Body";
+  position: absolute;
+  left: 12%;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+  margin: auto;
+  font-size: 15px;
+  color: #fff;
+}
+
+.album-ball-02:hover::before {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .album-selector {
+    position: absolute;
+    top: 20%;
+    left: 1%;
+    z-index: 9;
+  }
+
+  .album-music-selector {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 82%;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .album-ball-01 {
+    transform: initial !important;
+  }
+
+  .album-ball-01:hover {
+    transform: initial !important;
+    top: initial;
+  }
+
+  .album-ball-01::before {
+    display: block;
+  }
+
+  .album-ball-01:hover::before {
+    display: initial;
+  }
+
+  .album-ball-02 {
+    transform: initial !important;
+  }
+
+  .album-ball-02:hover {
+    transform: initial !important;
+    top: initial;
+  }
+
+  .album-ball-02::before {
+    display: block;
+  }
+
+  .album-ball-02:hover::before {
+    display: initial;
+  }
+}

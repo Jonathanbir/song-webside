@@ -1,7 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
-import { setCurrentAlbum } from "../../reducers/songs.action";
+import {
+  setCurrentAlbum,
+  setIsMenuOpen,
+  setPlaySong,
+} from "../../reducers/songs.action";
 import "./index.css";
 
 const Menu = () => {
@@ -20,14 +24,22 @@ const Menu = () => {
             <div className="album-box">
               <div
                 className="album-inform"
-                onClick={() => dispatch(setCurrentAlbum("EarthBound"))}
+                onClick={() => {
+                  dispatch(setCurrentAlbum("EarthBound"));
+                  dispatch(setIsMenuOpen(false));
+                  dispatch(setPlaySong(false));
+                }}
               >
                 <p>EARTHBOUND/ 2022-02</p>
                 <div className="album album-01" />
               </div>
               <div
                 className="album-inform"
-                onClick={() => dispatch(setCurrentAlbum("OuttaBody"))}
+                onClick={() => {
+                  dispatch(setCurrentAlbum("OuttaBody"));
+                  dispatch(setIsMenuOpen(false));
+                  dispatch(setPlaySong(false));
+                }}
               >
                 <p>靈魂出竅 Outta Body / 2020-07</p>
                 <div className="album album-02" />

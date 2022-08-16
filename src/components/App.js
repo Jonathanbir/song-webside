@@ -31,7 +31,6 @@ const App = () => {
     }
   }, [currentAlbum, dispatch]);
 
-  console.log("currentAlbum", currentAlbum);
   return (
     <>
       <Wrapper>

@@ -8,6 +8,7 @@ import {
 } from "../../reducers/songs.selector";
 import { setCurrentSong, setPlaySong } from "../../reducers/songs.action";
 import Navigation from "../Navigation";
+import AlbumSelector from "../AlbumSelector.js";
 import Player from "../Player";
 import "./index.css";
 
@@ -38,7 +39,7 @@ const Music = ({ songs, isplaying }) => {
     );
 
     if (duration === ct) {
-      setPlaySong(false);
+      dispatch(setPlaySong(false));
     }
   };
 
@@ -52,6 +53,7 @@ const Music = ({ songs, isplaying }) => {
       style={isplaying ? { zIndex: "initial" } : { zIndex: "1" }}
     >
       <Navigation />
+      <AlbumSelector page="Music" />
       <Link className="link-logo" to="/">
         <motion.div
           className="logo music-logo"

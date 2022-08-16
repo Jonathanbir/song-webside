@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useMedia } from "../../hooks/useMedia";
 import { motion } from "framer-motion";
 import { useGlobalMouseMove } from "../../hooks/useGlobalMouseMove";
 import { FaHeadphonesAlt } from "react-icons/fa";
 import { selectCurrentAlbum } from "../../reducers/songs.selector";
 import Navigation from "../Navigation";
+import AlbumSelector from "../AlbumSelector.js";
 import "./index.css";
 
 const BackGround = ({ media, currentAlbum }) => {
@@ -110,7 +111,7 @@ const Cloud01 = ({ media, currentAlbum }) => {
   );
 };
 
-const Cloud02 = ({ currentAlbum }) => {
+const Cloud02 = ({ media, currentAlbum }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
@@ -121,7 +122,11 @@ const Cloud02 = ({ currentAlbum }) => {
           : "cloud-three planet-02"
       }
       initial={{ opacity: 0, scale: 0.5, y: -100 }}
-      animate={{ opacity: 1, scale: 1.2, x: 30 * mouseX, y: -30 * mouseY }}
+      animate={
+        media === "desktop"
+          ? { opacity: 1, scale: 1.2, x: 30 * mouseX, y: -30 * mouseY }
+          : { opacity: 1, scale: 1.2, y: 0 }
+      }
       transition={{ duration: 0.5 }}
     />
   );
@@ -148,7 +153,7 @@ const Cloud03 = ({ media, currentAlbum }) => {
   );
 };
 
-const Cloud04 = ({ currentAlbum }) => {
+const Cloud04 = ({ media, currentAlbum }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
@@ -159,7 +164,11 @@ const Cloud04 = ({ currentAlbum }) => {
           : "cloud-one planet-04"
       }
       initial={{ opacity: 0, scale: 0.5, y: -100 }}
-      animate={{ opacity: 1, scale: 1.2, x: -30 * mouseX, y: 30 * mouseY }}
+      animate={
+        media === "desktop"
+          ? { opacity: 1, scale: 1.2, x: -30 * mouseX, y: 30 * mouseY }
+          : { opacity: 1, scale: 1.2, y: 9 }
+      }
       transition={{ duration: 0.5 }}
     />
   );
@@ -167,7 +176,6 @@ const Cloud04 = ({ currentAlbum }) => {
 
 const Home = () => {
   const media = useMedia();
-  const dispatch = useDispatch();
   const currentAlbum = useSelector(selectCurrentAlbum);
 
   return (
@@ -177,6 +185,7 @@ const Home = () => {
       }
     >
       <Navigation />
+      <AlbumSelector />
       <BackGround media={media} currentAlbum={currentAlbum} />
       <Link className="link-logo" to="/">
         <motion.div
@@ -188,9 +197,9 @@ const Home = () => {
       </Link>
       <Eso media={media} currentAlbum={currentAlbum} />
       <Cloud01 media={media} currentAlbum={currentAlbum} />
-      <Cloud02 currentAlbum={currentAlbum} />
+      <Cloud02 media={media} currentAlbum={currentAlbum} />
       <Cloud03 media={media} currentAlbum={currentAlbum} />
-      <Cloud04 currentAlbum={currentAlbum} />
+      <Cloud04 media={media} currentAlbum={currentAlbum} />
       <LeftStuff media={media} currentAlbum={currentAlbum} />
       <RightStuff media={media} currentAlbum={currentAlbum} />
       <Link className="nav-link" to="music">

@@ -1,7 +1,8 @@
-import React from "react";
-import { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import Menu from "../Menu";
-import { motion, useCycle } from "framer-motion";
+import { motion } from "framer-motion";
+import { selectIsMenuOpen } from "../../reducers/songs.selector";
 import { useDimensions } from "../../hooks/useDimensions";
 import { MenuToggle } from "../MenuToggle";
 import {
@@ -14,10 +15,9 @@ import {
 import "./index.css";
 
 const Navigation = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
-  console.log("isOpen", isOpen);
+  const isMenuOpen = useSelector(selectIsMenuOpen);
 
   const sidebar = {
     open: (height = 1000) => ({
@@ -43,13 +43,13 @@ const Navigation = () => {
     <div className="nav-container">
       <motion.nav
         initial={false}
-        animate={isOpen ? "open" : "closed"}
+        animate={isMenuOpen ? "open" : "closed"}
         custom={height}
         ref={containerRef}
       >
         <motion.div className="menu-background" variants={sidebar} />
-        {isOpen && <Menu />}
-        <MenuToggle className="menu" toggle={() => toggleOpen()} />
+        {isMenuOpen && <Menu />}
+        <MenuToggle className="menu" />
       </motion.nav>
       <motion.div
         className="social-media"
@@ -64,7 +64,7 @@ const Navigation = () => {
         >
           <FaFacebookF
             className="font-icon"
-            style={isOpen && { color: "#000" }}
+            style={isMenuOpen && { color: "#000" }}
           />
         </a>
         <a
@@ -74,7 +74,7 @@ const Navigation = () => {
         >
           <FaYoutube
             className="font-icon"
-            style={isOpen && { color: "#000" }}
+            style={isMenuOpen && { color: "#000" }}
           />
         </a>
         <a
@@ -84,7 +84,7 @@ const Navigation = () => {
         >
           <FaInstagram
             className="font-icon"
-            style={isOpen && { color: "#000" }}
+            style={isMenuOpen && { color: "#000" }}
           />
         </a>
         <a
@@ -94,7 +94,7 @@ const Navigation = () => {
         >
           <FaSoundcloud
             className="font-icon"
-            style={isOpen && { color: "#000" }}
+            style={isMenuOpen && { color: "#000" }}
           />
         </a>
         <a
@@ -104,7 +104,7 @@ const Navigation = () => {
         >
           <FaSpotify
             className="font-icon"
-            style={isOpen && { color: "#000" }}
+            style={isMenuOpen && { color: "#000" }}
           />
         </a>
       </motion.div>
