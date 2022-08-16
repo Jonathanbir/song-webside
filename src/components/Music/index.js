@@ -80,6 +80,7 @@ const Music = ({ songs, isplaying }) => {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
+        style={currentAlbum === "OuttaBody" ? {} : { color: "#fff" }}
       >
         ESO 靈魂出竅 Outta Body <br />
         <span className="song-title">{currentSong.title}</span>

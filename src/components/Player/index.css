@@ -17,6 +17,10 @@
   background-color: black;
 }
 
+.gray {
+  background-color: #999;
+}
+
 .player_container .navigation {
   width: 100%;
 }

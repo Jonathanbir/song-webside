@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
 import { useDispatch, useSelector, connect } from "react-redux";
 import { motion } from "framer-motion";
-import { selectCurrentSong } from "../../reducers/songs.selector";
+import {
+  selectCurrentSong,
+  selectCurrentAlbum,
+} from "../../reducers/songs.selector";
 import { setCurrentSong, setPlaySong } from "../../reducers/songs.action";
 import "./index.css";
 import {
@@ -15,6 +18,7 @@ const Player = ({ audioElem, isplaying, songs }) => {
   const dispatch = useDispatch();
   const clickRef = useRef();
   const currentSong = useSelector(selectCurrentSong);
+  const currentAlbum = useSelector(selectCurrentAlbum);
 
   const PlayPause = () => {
     dispatch(setPlaySong(!isplaying));
@@ -64,7 +68,11 @@ const Player = ({ audioElem, isplaying, songs }) => {
 
   return (
     <motion.div
-      className="player_container"
+      className={
+        currentAlbum === "OuttaBody"
+          ? "player_container"
+          : "player_container gray"
+      }
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1 }}
