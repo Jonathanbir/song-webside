@@ -191,6 +191,12 @@
   color: rgb(38, 37, 37);
 }
 
+@media screen and (max-width: 1400px) and (min-width: 830px) {
+  .tree {
+    left: 300px;
+  }
+}
+
 @media screen and (max-width: 830px) and (min-width: 767px) {
   .home-background {
     height: 60vh;
