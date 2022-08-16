@@ -11,10 +11,11 @@ import "./index.css";
 
 const AlbumSelector = ({ page }) => {
   const dispatch = useDispatch();
+
   const isAlbumOpen = useSelector(selectIsAlbumOpen);
   return (
     <>
-      {!isAlbumOpen && page !== "Music" ? (
+      {!isAlbumOpen ? (
         <div
           className="album-btn"
           onClick={() => dispatch(setIsAlbumOpen(true))}

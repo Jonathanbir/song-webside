@@ -2,11 +2,17 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector, connect } from "react-redux";
+import { useMedia } from "../../hooks/useMedia";
 import {
   selectCurrentSong,
   selectCurrentAlbum,
+  selectIsAlbumOpen,
 } from "../../reducers/songs.selector";
-import { setCurrentSong, setPlaySong } from "../../reducers/songs.action";
+import {
+  setCurrentSong,
+  setPlaySong,
+  setIsAlbumOpen,
+} from "../../reducers/songs.action";
 import Navigation from "../Navigation";
 import AlbumSelector from "../AlbumSelector.js";
 import Player from "../Player";
@@ -14,8 +20,10 @@ import "./index.css";
 
 const Music = ({ songs, isplaying }) => {
   const dispatch = useDispatch();
+  const media = useMedia();
   const currentSong = useSelector(selectCurrentSong);
   const currentAlbum = useSelector(selectCurrentAlbum);
+  const isAlbumOpen = useSelector(selectIsAlbumOpen);
   const audioElem = useRef();
 
   useEffect(() => {
@@ -25,6 +33,12 @@ const Music = ({ songs, isplaying }) => {
       audioElem.current.pause();
     }
   }, [isplaying]);
+
+  useEffect(() => {
+    if (media === "phone") {
+      dispatch(setIsAlbumOpen(true));
+    }
+  }, [dispatch, media, isAlbumOpen]);
 
   const onPlaying = () => {
     const duration = audioElem.current.duration;
