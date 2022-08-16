@@ -191,7 +191,32 @@
   color: rgb(38, 37, 37);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 830px) and (min-width: 767px) {
+  .home-background {
+    height: 60vh;
+    background-size: cover;
+  }
+
+  .bird {
+    left: -50%;
+    bottom: -10%;
+    width: 130%;
+    height: 600px;
+  }
+
+  .tree {
+    left: -19%;
+    bottom: -5%;
+    width: 200%;
+    height: 600px;
+  }
+
+  .eso {
+    height: 850px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .home-background {
     height: 60vh;
     background-size: cover;
@@ -216,6 +241,7 @@
   }
 
   .logo {
+    background-size: contain;
     top: 4%;
     width: 40%;
   }
