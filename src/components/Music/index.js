@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { useDispatch, useSelector, connect } from "react-redux";
-import Navigation from "../Navigation";
-import Player from "../Player";
 import { selectCurrentSong } from "../../reducers/songs.selector";
 import { setCurrentSong, setPlaySong } from "../../reducers/songs.action";
+import Navigation from "../Navigation";
+import Player from "../Player";
 import "./index.css";
 
 const Music = ({ songs, isplaying }) => {
@@ -45,14 +46,29 @@ const Music = ({ songs, isplaying }) => {
     >
       <Navigation />
       <Link className="link-logo" to="/">
-        <div className="logo music-logo" />
+        <motion.div
+          className="logo music-logo"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        />
       </Link>
-      <div className={isplaying ? "cd animate" : "cd"} />
+      <motion.div
+        className={isplaying ? "cd animate" : "cd"}
+        initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        transition={{ duration: 0.5 }}
+      />
       <audio src={currentSong.url} ref={audioElem} onTimeUpdate={onPlaying} />
-      <p className="music-title">
+      <motion.p
+        className="music-title"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+      >
         ESO 靈魂出竅 Outta Body <br />
         <span className="song-title">{currentSong.title}</span>
-      </p>
+      </motion.p>
       <Player songs={songs} isplaying={isplaying} audioElem={audioElem} />
     </div>
   );

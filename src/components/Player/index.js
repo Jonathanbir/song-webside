@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useDispatch, useSelector, connect } from "react-redux";
+import { motion } from "framer-motion";
 import { selectCurrentSong } from "../../reducers/songs.selector";
 import { setCurrentSong, setPlaySong } from "../../reducers/songs.action";
 import "./index.css";
@@ -62,7 +63,12 @@ const Player = ({ audioElem, isplaying, songs }) => {
   };
 
   return (
-    <div className="player_container">
+    <motion.div
+      className="player_container"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div className="navigation">
         <div className="navigation_wrapper" onClick={checkWidth} ref={clickRef}>
           <div
@@ -83,7 +89,7 @@ const Player = ({ audioElem, isplaying, songs }) => {
         )}
         <BsFillSkipEndCircleFill className="btn_action" onClick={skiptoNext} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

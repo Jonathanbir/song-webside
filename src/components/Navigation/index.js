@@ -50,7 +50,12 @@ const Navigation = () => {
         {isOpen && <Menu />}
         <MenuToggle className="menu" toggle={() => toggleOpen()} />
       </motion.nav>
-      <div className="social-media">
+      <motion.div
+        className="social-media"
+        initial={{ opacity: 0, scale: 0.5, y: -300 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <a
           target="_blank"
           href="https://www.facebook.com/profile.php?id=100044618191037"
@@ -101,7 +106,7 @@ const Navigation = () => {
             style={isOpen && { color: "#000" }}
           />
         </a>
-      </div>
+      </motion.div>
     </div>
   );
 };
