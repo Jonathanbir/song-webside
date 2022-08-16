@@ -6,3 +6,6 @@ export const setPlaySong = (boolean) =>
 
 export const setCurrentSong = (song) =>
   createAction(SONGS_ACTION_TYPES.SET_CURRENT_SONG, song);
+
+export const setCurrentAlbum = (album) =>
+  createAction(SONGS_ACTION_TYPES.SET_CURRENT_ALBUM, album);

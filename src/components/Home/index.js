@@ -1,18 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { useMedia } from "../../hooks/useMedia";
 import { motion } from "framer-motion";
 import { useGlobalMouseMove } from "../../hooks/useGlobalMouseMove";
 import { FaHeadphonesAlt } from "react-icons/fa";
+import { selectCurrentAlbum } from "../../reducers/songs.selector";
 import Navigation from "../Navigation";
 import "./index.css";
 
-const BackGround = ({ media }) => {
+const BackGround = ({ media, currentAlbum }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <div
-      className="home-background"
+      className={
+        currentAlbum === "OuttaBody"
+          ? "home-background home-jungle"
+          : "home-background home-planet"
+      }
       style={
         media === "desktop"
           ? {
@@ -26,12 +32,14 @@ const BackGround = ({ media }) => {
   );
 };
 
-const Eso = ({ media }) => {
+const Eso = ({ media, currentAlbum }) => {
   const [mouseX] = useGlobalMouseMove();
 
   return (
     <motion.div
-      className="eso"
+      className={
+        currentAlbum === "OuttaBody" ? "eso eso-original" : "eso eso-astronaut"
+      }
       initial={{ opacity: 0, scale: 0.5, y: 1000 }}
       animate={
         media === "desktop"
@@ -43,12 +51,14 @@ const Eso = ({ media }) => {
   );
 };
 
-const Bird = ({ media }) => {
+const LeftStuff = ({ media, currentAlbum }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <motion.div
-      className="bird"
+      className={
+        currentAlbum === "OuttaBody" ? "left-stuff bird" : "left-stuff rock01"
+      }
       initial={{ opacity: 0, scale: 0.5, y: 1000 }}
       animate={
         media === "desktop"
@@ -60,12 +70,14 @@ const Bird = ({ media }) => {
   );
 };
 
-const Tree = ({ media }) => {
+const RightStuff = ({ media, currentAlbum }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <motion.div
-      className="tree"
+      className={
+        currentAlbum === "OuttaBody" ? "right-stuff tree" : "right-stuff rock02"
+      }
       initial={{ opacity: 0, scale: 0.5, y: 1000 }}
       animate={
         media === "desktop"
@@ -77,12 +89,16 @@ const Tree = ({ media }) => {
   );
 };
 
-const Cloud01 = ({ media }) => {
+const Cloud01 = ({ media, currentAlbum }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <motion.div
-      className="cloud-three cloud-01"
+      className={
+        currentAlbum === "OuttaBody"
+          ? "cloud-three cloud-01"
+          : "cloud-three  planet-01"
+      }
       initial={{ opacity: 0, scale: 0.5, y: -100 }}
       animate={
         media === "desktop"
@@ -94,12 +110,16 @@ const Cloud01 = ({ media }) => {
   );
 };
 
-const Cloud02 = () => {
+const Cloud02 = ({ currentAlbum }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <motion.div
-      className="cloud-three cloud-02"
+      className={
+        currentAlbum === "OuttaBody"
+          ? "cloud-three cloud-02"
+          : "cloud-three planet-02"
+      }
       initial={{ opacity: 0, scale: 0.5, y: -100 }}
       animate={{ opacity: 1, scale: 1.2, x: 30 * mouseX, y: -30 * mouseY }}
       transition={{ duration: 0.5 }}
@@ -107,12 +127,16 @@ const Cloud02 = () => {
   );
 };
 
-const Cloud03 = ({ media }) => {
+const Cloud03 = ({ media, currentAlbum }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <motion.div
-      className="cloud-one cloud-03"
+      className={
+        currentAlbum === "OuttaBody"
+          ? "cloud-one cloud-03"
+          : "cloud-one planet-03"
+      }
       initial={{ opacity: 0, scale: 0.5, y: -100 }}
       animate={
         media === "desktop"
@@ -124,12 +148,16 @@ const Cloud03 = ({ media }) => {
   );
 };
 
-const Cloud04 = () => {
+const Cloud04 = ({ currentAlbum }) => {
   const [mouseX, mouseY] = useGlobalMouseMove();
 
   return (
     <motion.div
-      className="cloud-one cloud-04"
+      className={
+        currentAlbum === "OuttaBody"
+          ? "cloud-one cloud-04"
+          : "cloud-one planet-04"
+      }
       initial={{ opacity: 0, scale: 0.5, y: -100 }}
       animate={{ opacity: 1, scale: 1.2, x: -30 * mouseX, y: 30 * mouseY }}
       transition={{ duration: 0.5 }}
@@ -139,11 +167,16 @@ const Cloud04 = () => {
 
 const Home = () => {
   const media = useMedia();
+  const currentAlbum = useSelector(selectCurrentAlbum);
 
   return (
-    <div className="container">
+    <div
+      className={
+        currentAlbum === "OuttaBody" ? "container" : "container universe"
+      }
+    >
       <Navigation />
-      <BackGround media={media} />
+      <BackGround media={media} currentAlbum={currentAlbum} />
       <Link className="link-logo" to="/">
         <motion.div
           className="logo"
@@ -152,13 +185,13 @@ const Home = () => {
           transition={{ duration: 1 }}
         />
       </Link>
-      <Eso media={media} />
-      <Cloud01 media={media} />
-      {media === "desktop" && <Cloud02 />}
-      <Cloud03 media={media} />
-      {media === "desktop" && <Cloud04 />}
-      <Bird media={media} />
-      <Tree media={media} />
+      <Eso media={media} currentAlbum={currentAlbum} />
+      <Cloud01 media={media} currentAlbum={currentAlbum} />
+      <Cloud02 currentAlbum={currentAlbum} />
+      <Cloud03 media={media} currentAlbum={currentAlbum} />
+      <Cloud04 currentAlbum={currentAlbum} />
+      <LeftStuff media={media} currentAlbum={currentAlbum} />
+      <RightStuff media={media} currentAlbum={currentAlbum} />
       <Link className="nav-link" to="music">
         <div className="music-btn">
           <FaHeadphonesAlt className="font-icon-headphones" />

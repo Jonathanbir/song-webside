@@ -2,7 +2,10 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector, connect } from "react-redux";
-import { selectCurrentSong } from "../../reducers/songs.selector";
+import {
+  selectCurrentSong,
+  selectCurrentAlbum,
+} from "../../reducers/songs.selector";
 import { setCurrentSong, setPlaySong } from "../../reducers/songs.action";
 import Navigation from "../Navigation";
 import Player from "../Player";
@@ -11,7 +14,7 @@ import "./index.css";
 const Music = ({ songs, isplaying }) => {
   const dispatch = useDispatch();
   const currentSong = useSelector(selectCurrentSong);
-
+  const currentAlbum = useSelector(selectCurrentAlbum);
   const audioElem = useRef();
 
   useEffect(() => {
@@ -41,7 +44,11 @@ const Music = ({ songs, isplaying }) => {
 
   return (
     <div
-      className="music-container"
+      className={
+        currentAlbum === "OuttaBody"
+          ? "music-container"
+          : "music-container black"
+      }
       style={isplaying ? { zIndex: "initial" } : { zIndex: "1" }}
     >
       <Navigation />
@@ -54,7 +61,15 @@ const Music = ({ songs, isplaying }) => {
         />
       </Link>
       <motion.div
-        className={isplaying ? "cd animate" : "cd"}
+        className={
+          currentAlbum === "OuttaBody"
+            ? isplaying
+              ? "cd cd01 animate"
+              : "cd cd01"
+            : isplaying
+            ? "cd cd02 animate"
+            : "cd cd02"
+        }
         initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
         animate={{ opacity: 1, scale: 1, rotate: 360 }}
         transition={{ duration: 0.5 }}

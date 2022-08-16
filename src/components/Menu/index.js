@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { setCurrentAlbum } from "../../reducers/songs.action";
 import "./index.css";
 
 const Menu = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <motion.div
@@ -15,16 +18,22 @@ const Menu = () => {
           <div className="album-container">
             <h1>專輯列表</h1>
             <div className="album-box">
-              <div className="album-inform">
-                <p>靈魂出竅 Outta Body / 2020-07</p>
+              <div
+                className="album-inform"
+                onClick={() => dispatch(setCurrentAlbum("EarthBound"))}
+              >
+                <p>EARTHBOUND/ 2022-02</p>
                 <div className="album album-01" />
               </div>
-              <div className="album-inform">
-                <p>Y.S.G Mixtape / 2012-02</p>
+              <div
+                className="album-inform"
+                onClick={() => dispatch(setCurrentAlbum("OuttaBody"))}
+              >
+                <p>靈魂出竅 Outta Body / 2020-07</p>
                 <div className="album album-02" />
               </div>
               <div className="album-inform">
-                <p>冒險王Mixtape / 2009-08</p>
+                <p>Y.S.G Mixtape / 2012-02</p>
                 <div className="album album-03" />
               </div>
             </div>

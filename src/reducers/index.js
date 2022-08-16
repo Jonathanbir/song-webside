@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
 import { SONGS_ACTION_TYPES } from "./songs.types";
 
+const albums = ["OuttaBody", "EarthBound"];
+
 const songs = [
   {
     title: "Change",
@@ -39,12 +41,18 @@ const songs = [
 const SONGS_INITIAL_STATE = {
   songs: songs,
   currentSong: songs[0],
+  currentAlbum: albums[0],
   isplaying: false,
 };
 
 const songsReducer = (state = SONGS_INITIAL_STATE, action) => {
   const { type, payload } = action;
   switch (type) {
+    case SONGS_ACTION_TYPES.SET_CURRENT_ALBUM:
+      return {
+        ...state,
+        currentAlbum: payload,
+      };
     case SONGS_ACTION_TYPES.SET_CURRENT_SONG:
       return {
         ...state,
