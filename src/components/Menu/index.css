@@ -116,7 +116,7 @@
   background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1500px) {
   .intro p {
     line-height: 1.1rem;
     font-size: 10px;
