@@ -241,4 +241,13 @@
     height: 300px;
     background-size: 63%;
   }
+
+  .music-btn p {
+    position: absolute;
+    left: 0;
+    right: 13%;
+    width: 25px;
+    font-size: 13px;
+    margin: auto;
+  }
 }
