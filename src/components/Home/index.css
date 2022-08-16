@@ -262,6 +262,10 @@
   .tree {
     left: 300px;
   }
+
+  .rock01 {
+    left: 42%;
+  }
 }
 
 @media screen and (max-width: 830px) and (min-width: 767px) {

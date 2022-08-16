@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useMedia } from "../../hooks/useMedia";
 import { motion } from "framer-motion";
 import { useGlobalMouseMove } from "../../hooks/useGlobalMouseMove";
 import { FaHeadphonesAlt } from "react-icons/fa";
 import { selectCurrentAlbum } from "../../reducers/songs.selector";
+import { setIsAlbumOpen } from "../../reducers/songs.action";
 import Navigation from "../Navigation";
 import AlbumSelector from "../AlbumSelector.js";
 import "./index.css";
@@ -176,7 +177,12 @@ const Cloud04 = ({ media, currentAlbum }) => {
 
 const Home = () => {
   const media = useMedia();
+  const dispatch = useDispatch();
   const currentAlbum = useSelector(selectCurrentAlbum);
+
+  useEffect(() => {
+    dispatch(setIsAlbumOpen(false));
+  }, [dispatch]);
 
   return (
     <div

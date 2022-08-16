@@ -16,12 +16,13 @@ const AlbumSelector = ({ page }) => {
   return (
     <>
       {!isAlbumOpen ? (
-        <div
+        <motion.div
           className="album-btn"
+          initial={{ opacity: 0, x: -100, scale: 0.5 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 1 }}
           onClick={() => dispatch(setIsAlbumOpen(true))}
-        >
-          專輯列表
-        </div>
+        />
       ) : (
         <div
           className={

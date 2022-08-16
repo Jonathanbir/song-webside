@@ -1,50 +1,50 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from "react";
 
 export const useMedia = () => {
-	const phoneMedia = window.matchMedia('(max-width: 767px)');
-	const desktopMedia = window.matchMedia('(min-width: 768px)');
+  const phoneMedia = window.matchMedia("(max-width: 767px)");
+  const desktopMedia = window.matchMedia("(min-width: 768px)");
 
-	let defaultMedia = 'desktop';
+  let defaultMedia = "desktop";
 
-	if (phoneMedia.matches) {
-		defaultMedia = 'phone';
-	}
+  if (phoneMedia.matches) {
+    defaultMedia = "phone";
+  }
 
-	const [media, setMedia] = useState(defaultMedia);
+  const [media, setMedia] = useState(defaultMedia);
 
-	const handleMediaChange = mediaName => mediaHandler => {
-		if (mediaHandler.matches && mediaName !== media) {
-			setMedia(mediaName);
-		}
-	};
+  const handleMediaChange = (mediaName) => (mediaHandler) => {
+    if (mediaHandler.matches && mediaName !== media) {
+      setMedia(mediaName);
+    }
+  };
 
-	useEffect(() => {
-		const phoneHandler = handleMediaChange('phone');
-		const desktopHandler = handleMediaChange('desktop');
+  useEffect(() => {
+    const phoneHandler = handleMediaChange("phone");
+    const desktopHandler = handleMediaChange("desktop");
 
-		phoneMedia.addListener(phoneHandler);
-		desktopMedia.addListener(desktopHandler);
+    phoneMedia.addListener(phoneHandler);
+    desktopMedia.addListener(desktopHandler);
 
-		return () => {
-			phoneMedia.removeListener(phoneHandler);
-			desktopMedia.removeListener(desktopHandler);
-		};
-	}, [media]);
+    return () => {
+      phoneMedia.removeListener(phoneHandler);
+      desktopMedia.removeListener(desktopHandler);
+    };
+  }, [desktopMedia, handleMediaChange, media, phoneMedia]);
 
-	return media;
+  return media;
 };
 
 export const useWindowSize = () => {
-	const [size, setSize] = useState([0, 0]);
+  const [size, setSize] = useState([0, 0]);
 
-	useLayoutEffect(() => {
-		const updateSize = () => {
-			setSize([window.innerWidth, window.innerHeight]);
-		};
-		window.addEventListener('resize', updateSize);
-		updateSize();
-		return () => window.removeEventListener('resize', updateSize);
-	}, []);
+  useLayoutEffect(() => {
+    const updateSize = () => {
+      setSize([window.innerWidth, window.innerHeight]);
+    };
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
-	return size;
+  return size;
 };
