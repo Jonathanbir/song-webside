@@ -32,17 +32,10 @@ const Eso = ({ media }) => {
   return (
     <motion.div
       className="eso"
-      style={
-        media === "desktop"
-          ? {
-              transform: `translate( ${30 * mouseX}px)`,
-            }
-          : {}
-      }
       initial={{ opacity: 0, scale: 0.5, y: 1000 }}
       animate={
         media === "desktop"
-          ? { opacity: 1, scale: 1, x: 100 * mouseX, y: 0 }
+          ? { opacity: 1, scale: 1, x: 80 * mouseX, y: 0 }
           : { opacity: 1, scale: 1, y: 0 }
       }
       transition={{ duration: 0.5 }}
@@ -90,15 +83,6 @@ const Cloud01 = ({ media }) => {
   return (
     <motion.div
       className="cloud-three cloud-01"
-      style={
-        media === "desktop"
-          ? {
-              transform: `translate(${30 * mouseX}px, ${
-                -30 * mouseY
-              }px) scale(1.2) `,
-            }
-          : {}
-      }
       initial={{ opacity: 0, scale: 0.5, y: -100 }}
       animate={
         media === "desktop"
@@ -116,11 +100,6 @@ const Cloud02 = () => {
   return (
     <motion.div
       className="cloud-three cloud-02"
-      style={{
-        transform: `translate(${-30 * mouseX}px, ${
-          30 * mouseY
-        }px) scale(1.2) rotate(200deg)`,
-      }}
       initial={{ opacity: 0, scale: 0.5, y: -100 }}
       animate={{ opacity: 1, scale: 1.2, x: 30 * mouseX, y: -30 * mouseY }}
       transition={{ duration: 0.5 }}
@@ -134,15 +113,6 @@ const Cloud03 = ({ media }) => {
   return (
     <motion.div
       className="cloud-one cloud-03"
-      style={
-        media === "desktop"
-          ? {
-              transform: `translate(${-30 * mouseX}px, ${
-                30 * mouseY
-              }px) scale(1.2)`,
-            }
-          : {}
-      }
       initial={{ opacity: 0, scale: 0.5, y: -100 }}
       animate={
         media === "desktop"
@@ -160,9 +130,6 @@ const Cloud04 = () => {
   return (
     <motion.div
       className="cloud-one cloud-04"
-      style={{
-        transform: `translate(${-30 * mouseX}px, ${30 * mouseY}px) scale(1.2)`,
-      }}
       initial={{ opacity: 0, scale: 0.5, y: -100 }}
       animate={{ opacity: 1, scale: 1.2, x: -30 * mouseX, y: 30 * mouseY }}
       transition={{ duration: 0.5 }}
