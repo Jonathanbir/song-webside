@@ -13,6 +13,66 @@
   height: 100vh;
 }
 
+.menu-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.album-container {
+  position: relative;
+  left: -6%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.album-container h1 {
+  writing-mode: vertical-rl;
+}
+
+.album-container p {
+  color: rgb(58, 56, 56);
+  line-height: 2rem;
+  margin: 5px 0;
+}
+
+.album-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.album-inform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.album {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.album-01 {
+  background-image: url("https://www.truecolor.mu/images/album/1595391819595936644.jpg");
+}
+
+.album-02 {
+  background-image: url("https://www.truecolor.mu/images/album/14776256341160702244.jpg");
+}
+
+.album-03 {
+  background-image: url("https://www.truecolor.mu/images/album/1477628773301445749.jpg");
+}
+
 .close-btn {
   position: fixed;
   left: 20px;
@@ -30,6 +90,7 @@
 .intro {
   position: relative;
   width: 50%;
+  left: -3%;
 }
 
 .eso-intro {
@@ -42,32 +103,45 @@
   background-repeat: no-repeat;
 }
 
-.menu-container h1 {
+.intro h1 {
   color: #000;
   line-height: 2rem;
   margin: 20px 0;
 }
 
-.menu-container p {
+.intro p {
   color: #000;
   line-height: 2rem;
   margin: 20px 0;
 }
 
 @media screen and (max-width: 768px) {
+  .menu-box {
+    flex-direction: column-reverse;
+  }
+
+  .album-container {
+    position: initial;
+  }
+
   .intro {
-    top: -9%;
+    position: initial;
     width: 90%;
+    height: 75vh;
+  }
+
+  .intro h1 {
+    text-align: center;
   }
 
   .eso-intro {
-    width: 30%;
-    height: 30%;
+    width: 150px;
+    height: 150px;
   }
 
   .intro-text {
     width: 100%;
-    height: 60vh;
+    height: 45vh;
     overflow-x: hidden;
   }
 
@@ -75,9 +149,38 @@
     line-height: 1.2rem;
     margin: 2rem 0;
   }
+
   .menu-container p {
     line-height: 1.2rem;
     margin: 2rem 0;
     font-size: 10px;
+  }
+
+  .album-container {
+    flex-direction: column;
+  }
+
+  .album-container h1 {
+    margin: 1rem auto;
+    writing-mode: horizontal-tb;
+  }
+
+  .album-box {
+    flex-direction: row;
+  }
+
+  .album-container p {
+    margin: 5px auto;
+  }
+
+  .album-inform p {
+    font-size: 10px;
+    text-align: center;
+    margin: 5px auto;
+  }
+
+  .album {
+    width: 100px;
+    height: 100px;
   }
 }
