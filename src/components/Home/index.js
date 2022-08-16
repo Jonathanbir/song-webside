@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useMedia } from "../../hooks/useMedia";
 import { motion } from "framer-motion";
 import { useGlobalMouseMove } from "../../hooks/useGlobalMouseMove";
@@ -167,6 +167,7 @@ const Cloud04 = ({ currentAlbum }) => {
 
 const Home = () => {
   const media = useMedia();
+  const dispatch = useDispatch();
   const currentAlbum = useSelector(selectCurrentAlbum);
 
   return (

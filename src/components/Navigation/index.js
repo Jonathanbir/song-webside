@@ -17,6 +17,7 @@ const Navigation = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
+  console.log("isOpen", isOpen);
 
   const sidebar = {
     open: (height = 1000) => ({
