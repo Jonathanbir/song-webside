@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useMedia } from "../../hooks/useMedia";
 import { motion } from "framer-motion";
 import {
   setCurrentAlbum,
@@ -15,6 +16,7 @@ import "./index.css";
 
 const AlbumSelector = ({ page }) => {
   const dispatch = useDispatch();
+  const media = useMedia();
 
   const isAlbumOpen = useSelector(selectIsAlbumOpen);
   const currentAlbum = useSelector(selectCurrentAlbum);
@@ -34,14 +36,16 @@ const AlbumSelector = ({ page }) => {
             page === "Music" ? "album-music-selector" : "album-selector"
           }
         >
-          <FaWindowClose
-            className={
-              currentAlbum === "OuttaBody"
-                ? "selector-close-btn grey"
-                : "selector-close-btn white"
-            }
-            onClick={() => dispatch(setIsAlbumOpen(false))}
-          />
+          {page === "Music" && media !== "phone" && (
+            <FaWindowClose
+              className={
+                currentAlbum === "OuttaBody"
+                  ? "selector-close-btn grey"
+                  : "selector-close-btn white"
+              }
+              onClick={() => dispatch(setIsAlbumOpen(false))}
+            />
+          )}
           <motion.div
             className="album-select-ball album-ball-01"
             initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
