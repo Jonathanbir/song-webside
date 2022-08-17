@@ -266,12 +266,57 @@
   .rock01 {
     left: 42%;
   }
+
+  .universe {
+    background-size: cover;
+    background-position-y: -100px;
+  }
 }
 
 @media screen and (max-width: 830px) and (min-width: 767px) {
   .home-background {
     height: 60vh;
     background-size: cover;
+  }
+
+  .universe {
+    background-size: cover;
+    background-position-y: -100px;
+  }
+
+  .planet-01 {
+    left: 5%;
+  }
+
+  .planet-02 {
+    height: 420px;
+    top: 25%;
+    left: 45%;
+    background-size: 100%;
+  }
+
+  .planet-03 {
+    left: -5%;
+    top: 20%;
+    background-size: 50%;
+  }
+
+  .planet-04 {
+    top: 25%;
+    background-size: 50%;
+  }
+
+  .eso-astronaut {
+    bottom: -4%;
+  }
+
+  .rock01 {
+    left: 58%;
+    background-size: 100%;
+  }
+
+  .rock02 {
+    background-size: 80%;
   }
 
   .bird {
@@ -352,8 +397,8 @@
 
   .logo {
     background-size: contain;
-    top: 4%;
-    width: 40%;
+    top: 0;
+    width: 25%;
   }
 
   .cloud-01 {
