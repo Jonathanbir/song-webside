@@ -110,6 +110,24 @@
   display: block;
 }
 
+.selector-close-btn {
+  position: absolute;
+  top: -10px;
+  left: 115px;
+  font-size: 20px;
+  border-radius: 100%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.white {
+  color: #fff;
+}
+
+.grey {
+  color: rgb(151, 150, 150);
+}
+
 @media screen and (max-width: 768px) {
   .album-btn {
     top: 35%;

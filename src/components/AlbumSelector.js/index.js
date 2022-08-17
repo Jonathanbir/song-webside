@@ -6,13 +6,18 @@ import {
   setPlaySong,
   setIsAlbumOpen,
 } from "../../reducers/songs.action";
-import { selectIsAlbumOpen } from "../../reducers/songs.selector";
+import {
+  selectIsAlbumOpen,
+  selectCurrentAlbum,
+} from "../../reducers/songs.selector";
+import { FaWindowClose } from "react-icons/fa";
 import "./index.css";
 
 const AlbumSelector = ({ page }) => {
   const dispatch = useDispatch();
 
   const isAlbumOpen = useSelector(selectIsAlbumOpen);
+  const currentAlbum = useSelector(selectCurrentAlbum);
   return (
     <>
       {!isAlbumOpen ? (
@@ -29,6 +34,14 @@ const AlbumSelector = ({ page }) => {
             page === "Music" ? "album-music-selector" : "album-selector"
           }
         >
+          <FaWindowClose
+            className={
+              currentAlbum === "OuttaBody"
+                ? "selector-close-btn grey"
+                : "selector-close-btn white"
+            }
+            onClick={() => dispatch(setIsAlbumOpen(false))}
+          />
           <motion.div
             className="album-select-ball album-ball-01"
             initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
