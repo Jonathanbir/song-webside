@@ -36,7 +36,9 @@ const AlbumSelector = ({ page }) => {
             page === "Music" ? "album-music-selector" : "album-selector"
           }
         >
-          {page === "Music" && media !== "phone" && (
+          {page === "Music" && media === "phone" ? (
+            <></>
+          ) : (
             <FaWindowClose
               className={
                 currentAlbum === "OuttaBody"
@@ -47,7 +49,11 @@ const AlbumSelector = ({ page }) => {
             />
           )}
           <motion.div
-            className="album-select-ball album-ball-01"
+            className={
+              currentAlbum === "EarthBound"
+                ? "album-select-ball album-ball-01 select-border"
+                : "album-select-ball album-ball-01"
+            }
             initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
             animate={{ opacity: 1, scale: 1, rotate: 360 }}
             transition={{ duration: 0.5 }}
@@ -58,7 +64,11 @@ const AlbumSelector = ({ page }) => {
             }}
           />
           <motion.div
-            className="album-select-ball album-ball-02"
+            className={
+              currentAlbum === "OuttaBody"
+                ? "album-select-ball album-ball-02 select-border"
+                : "album-select-ball album-ball-02"
+            }
             initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
             animate={{ opacity: 1, scale: 1, rotate: 360 }}
             transition={{ duration: 0.5 }}
