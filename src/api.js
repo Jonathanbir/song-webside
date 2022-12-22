@@ -1,101 +1,101 @@
 export const songs01 = [
   {
     title: "Change",
-    url: "https://fs-preview.kfs.io/201307/1d0rY-kllD8-0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668231151_82ac6fa595b0d8e36dd85dea146fc4f9",
+    url: "https://fs-preview.kfs.io/201307/1d0rY-kllD8-0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471386_bb397cc7269af5044b79eb659231da8f",
   },
   {
     title: "Wait",
-    url: "https://fs-preview.kfs.io/201307/1dkvY-4inToy0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668231465_92897050a05eb65d1912d40e50b00b14",
+    url: "https://fs-preview.kfs.io/201307/1dkvY-4inToy0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471447_b86082c62fd5b69d4cda547b51d33631",
   },
   {
     title: "Follow You",
-    url: "https://fs-preview.kfs.io/201307/1dgpZOkrnzcz0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668231671_c9c4c229fa7d54a882880508c9dbcfba",
+    url: "https://fs-preview.kfs.io/201307/1dgpZOkrnzcz0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471623_db9cc8a5a2f65f4b9148ea8bcbdb2c35",
   },
   {
     title: "Money Bag",
-    url: "https://fs-preview.kfs.io/201307/1dkvY-4inT4_0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427860_a2dc1a497b34d4f2cd97ed1d3fdc96b5",
+    url: "https://fs-preview.kfs.io/201307/1dkvY-4inT4_0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471667_8cf5168f4765631e275270c91e93923f",
   },
   {
     title: "So Good To Me",
-    url: "https://fs-preview.kfs.io/201307/1dkvY-4inT8w0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668429116_15b5b47d8232297e411c139f4eb6ca9c",
+    url: "https://fs-preview.kfs.io/201307/1dkvY-4inT8w0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471694_9578d1147d17535096f0455a49a0e12a",
   },
   {
     title: "Something I Don't Need",
-    url: "https://fs-preview.kfs.io/201307/1dkvY-4inTw10mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668231640_5a26cb021b8171635f90f916c85fbd34",
+    url: "https://fs-preview.kfs.io/201307/1dkvY-4inTw10mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471487_7e29244a6815f54be776b9e849908784",
   },
   {
     title: "Don't Worry About Me",
-    url: "https://fs-preview.kfs.io/201307/1dkvY-4inDgx0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427760_4a7cd816260bae2f1b1cdb74b6243e3b",
+    url: "https://fs-preview.kfs.io/201307/1dkvY-4inDgx0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471571_fe7d3b849d9f4b64f1a678170b2ef4e4",
   },
   {
     title: "I Wish I Was There",
-    url: "https://fs-preview.kfs.io/201307/1dkvY-4inT400mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427832_642e67ffba515a5113cbd244f111be10",
+    url: "https://fs-preview.kfs.io/201307/1dkvY-4inT400mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471549_1052f9427a313252b0cc56515474770f",
   },
   {
     title: "Hello Beautiful",
-    url: "https://fs-preview.kfs.io/201307/1dkvY-4inDY30mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427818_428f9dc97c29bd4cf16c63016fa69d32",
+    url: "https://fs-preview.kfs.io/201307/1dkvY-4inDY30mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471995_03f828eb234c41e7a58512106d0e2f46",
   },
   {
     title: "伯父",
-    url: "https://fs-preview.kfs.io/201307/1dkvY-4inT0x0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668231435_bc38f2ef3047672f1c91a294383fd142",
+    url: "https://fs-preview.kfs.io/201307/1dkvY-4inT0x0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471523_ff4c1cb191ee923f659944adb727aee2",
   },
   {
     title: "太陽",
-    url: "https://fs-preview.kfs.io/201307/1dsvYO4rnTk10mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668231355_1d388cde92abbd9620a80dddf4f1bc54",
+    url: "https://fs-preview.kfs.io/201307/1dsvYO4rnTk10mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471467_da3ff0b807a9c906be0542a9d6d8c209",
   },
   {
     title: "她沒在看我",
-    url: "https://fs-preview.kfs.io/201307/1dooYOkllTY30mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668231276_50647ce35cf4b64db09063b54247d39d",
+    url: "https://fs-preview.kfs.io/201307/1dooYOkllTY30mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471424_b889cc50dea706cb41f5f1fad1dcfb3c",
   },
   {
     title: "稱讚她的美 ",
-    url: "https://fs-preview.kfs.io/201307/1dskZOkllT0_0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668231403_d21ccbf9a6285b013e97eeaa246346e7",
+    url: "https://fs-preview.kfs.io/201307/1dskZOkllT0_0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471595_70f27f1eb02ea05fe5ccf1cc53ba064c",
   },
 ];
 
 export const songs02 = [
   {
     title: "Way Up",
-    url: "https://fs-preview.kfs.io/201307/2NctZuMnmzg30mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427488_32ddca85e4b9a49e23d287d069c7894c",
+    url: "https://fs-preview.kfs.io/201307/2NsuYekgmTw_0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471797_f434017262390557d4c809fc15c62090",
   },
   {
     title: "祖先 ft. HowZ",
-    url: "https://fs-preview.kfs.io/201307/2NctZuMnmzg-0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427559_c3584deadea147f4980fab49750323a3",
+    url: "https://fs-preview.kfs.io/201307/2NctZuMnmzg-0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471267_c3b2fab5becc7ea9391d2e924c8910e9",
   },
   {
     title: "達文西",
-    url: "https://fs-preview.kfs.io/201307/2NctZuMnmzkz0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427583_a6977d8743a1ec27560fb85340ef6887",
+    url: "https://fs-preview.kfs.io/201307/2NctZuMnmzkz0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471917_1421c840decd9abcb18f8b3e9029560e",
   },
   {
     title: "People",
-    url: "https://fs-preview.kfs.io/201307/2NctZuMnmzY00mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427604_db0e8d2d4ae04ec795142c2337e3d858",
+    url: "https://fs-preview.kfs.io/201307/2NctZuMnmzY00mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471901_bfa97aa19fc35cc89b0c9689a4e9eebb",
   },
   {
     title: "Tiffany",
-    url: "https://fs-preview.kfs.io/201307/2NctZuMnmzY_0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427621_2f974fd25b1103acd38a3c1d812f5548",
+    url: "https://fs-preview.kfs.io/201307/2NctZuMnmzY_0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471962_bac8df1b65b10ee4339c4380685fcc61",
   },
   {
     title: "Lucid Dream",
-    url: "https://fs-preview.kfs.io/201307/2NctZuMnmzcw0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427651_3583b7730359c75c150b423625c4bd41",
+    url: "https://fs-preview.kfs.io/201307/2NctZuMnmzcw0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471945_5ae6c5469fd6310e76aa97ebc7aee239",
   },
   {
     title: "Big Girl",
-    url: "https://fs-preview.kfs.io/201307/2NctZuMnlD410mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427672_bbbb1916f25efd74757c2519aab5bb04",
+    url: "https://fs-preview.kfs.io/201307/2NctZuMnlD410mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471882_439d075551d5844ab6715a7a3e649b44",
   },
   {
     title: "我的癮",
-    url: "https://fs-preview.kfs.io/201307/2NctZuMnlD820mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427689_c63f6a351168bd079fc525f215f4b032",
+    url: "https://fs-preview.kfs.io/201307/2NklZ-sqmjww0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471819_5f965dbe25fe5a9dce0979bfd67802d1",
   },
   {
     title: "妹妹",
-    url: "https://fs-preview.kfs.io/201307/2NctZuMnlD8x0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427702_c73da43a84b8b49160fadf889ca4069f",
+    url: "https://fs-preview.kfs.io/201307/2NsqaeIrmDcz0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471720_37f3cfb9568b3fe65cfa18d6068d4f6c",
   },
   {
     title: "Married To The Game",
-    url: "https://fs-preview.kfs.io/201307/2NctZuMnlDwy0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427715_983437fabd0478b56f3c82d335a90ed3",
+    url: "https://fs-preview.kfs.io/201307/2NctZuMnlDwy0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471865_0fe638282d3c3581a1b65fc406eead39",
   },
   {
     title: "Amazing",
-    url: "https://fs-preview.kfs.io/201307/2NctZuMnlD030mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1668427728_a306cf1f8cb22537f39f731ade616ae2",
+    url: "https://fs-preview.kfs.io/201307/2NguZeInnj0w0mpLw_FUBtFAQnzkfdWeKlkkrtwLN8CDky3dVmo=?__gda__=1679471842_7e672f5de62919469a398138a9b6947f",
   },
 ];
